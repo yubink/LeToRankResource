@@ -88,7 +88,8 @@ trainFeatFile.close()
 # 5. call rankSVM. model stored in "model_cwb.dat"
 import os
 print "training..."
-os.popen("/Users/zhuyund/Documents/11642-SearchEngines/svm_rank/svm_rank_learn -c 1 -g 0.001 -t 0 train_cwb.feat model_cwb.dat")
+svmLoc = "/bos/usr0/yubink/opt/svm_rank/svm_rank_learn"
+os.popen("%s -c 1 -g 0.001 -t 0 train_cwb.feat model_cwb.dat" % svmLoc)
 print "finished training! model_cwb.dat, scaler.pkl"
 
 

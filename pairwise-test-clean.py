@@ -65,7 +65,8 @@ if True:
     
     # 5. call rankSVM. prediction results written in "predictions_cwb"
     import os
-    stream = os.popen("/Users/zhuyund/Documents/11642-SearchEngines/svm_rank/svm_rank_classify test_cwb.feat model_cwb.dat predictions_cwb")
+    svmLoc = "/bos/usr0/yubink/opt/svm_rank/svm_rank_classify"
+    stream = os.popen("%s test_cwb.feat model_cwb.dat predictions_cwb" % svmLoc)
 
     for line in stream:
         print line
